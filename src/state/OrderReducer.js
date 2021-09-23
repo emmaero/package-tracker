@@ -6,6 +6,6 @@ export default function OrderReducer(state, action) {
             throw new Error(`${action.type} action not found`)
     }
     function setOrder(action){
-        return action;
+        return action.parcelInfo;
     }
 }

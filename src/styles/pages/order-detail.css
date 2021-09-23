@@ -1,0 +1,17 @@
+.order-page-content {
+  width: 95%;
+  max-width: 920px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 30%;
+  background-color: #ffffff;
+  box-shadow: 4px 4px var(--color-tertiary);
+  min-height: 600px;
+  border-radius: 10px;
+}
+.map {
+  height: 400px;
+  width: 100%;
+}

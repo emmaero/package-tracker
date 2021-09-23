@@ -1,0 +1,12 @@
+.order-list {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 32px;
+  width: 100%;
+}
+@media (min-width: 920px) {
+  .order-list {
+    grid-template-columns: auto auto;
+  }
+}

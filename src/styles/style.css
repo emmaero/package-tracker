@@ -1,2 +1,17 @@
+/* font-family */
+@import url("./font-family.css");
+/* base */
+@import url("./base/layout.css");
+@import url("./base/variable.css");
 
-@import url("./base/layout.scss");
+/* components */
+@import url("./components/order-items.css");
+
+/* pages */
+@import url("./pages/order-page.css");
+@import url("./pages/order-detail.css");
+
+/* particles */
+@import url("./particles/header.css");
+@import url("./particles/headings.css");
+@import url("./particles/buttons.css");

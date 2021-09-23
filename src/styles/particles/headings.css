@@ -1,0 +1,24 @@
+h1 {
+  font-size: var(--font-heading-1-mobile);
+  margin: var(--space-small) 0;
+}
+
+h2 {
+  font-size: var(--font-heading-2-mobile);
+  margin: var(--space-small) 0;
+}
+h3 {
+  font-size: var(--font-heading-3-mobile);
+  margin: var(--space-small) 0;
+}
+@media (min-width: 920px) {
+  h1 {
+    font-size: var(--font-heading-1-desktop);
+  }
+  h2 {
+    font-size: var(--font-heading-2-desktop);
+  }
+  h3 {
+    font-size: var(--font-heading-3-desktop);
+  }
+}

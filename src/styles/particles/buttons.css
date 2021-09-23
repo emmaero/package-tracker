@@ -1,0 +1,13 @@
+.button-main {
+  border: none;
+  background-color: transparent;
+  font-size: var(--font-button-mobile);
+  font-weight: bold;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+@media (min-width: 920px) {
+  .button-main {
+    font-size: var(--font-button-desktop);
+  }
+}

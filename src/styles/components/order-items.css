@@ -1,0 +1,42 @@
+.order-item {
+  width: 100%;
+  max-width: 432px;
+  height: 64px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 4px 4px 2px var(--color-tertiary);
+  border-radius: 10px;
+  padding: 8px;
+  margin: 0 auto;
+}
+.icon-wrapper {
+  height: 48px;
+  width: 48px;
+  background-color: var(--color-primary);
+  border-radius: 10px;
+  margin-right: var(--space-medium);
+}
+.order-sender,
+.icon-wrapper {
+  display: inline-block;
+}
+.order-item > div:last-child {
+  text-align: right;
+}
+.icon-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+@media (min-width: 920px) {
+  .order-item {
+    height: 154px;
+    width: 432px;
+  }
+  .icon-wrapper {
+    height: 72px;
+    width: 72px;
+  }
+}
