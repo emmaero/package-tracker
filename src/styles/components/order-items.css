@@ -1,7 +1,7 @@
 .order-item {
   width: 100%;
   max-width: 432px;
-  height: 64px;
+  height: 80px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -17,6 +17,14 @@
   background-color: var(--color-primary);
   border-radius: 10px;
   margin-right: var(--space-medium);
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+}
+.icon-wrapper img {
+  filter: grayscale(50%);
 }
 .order-sender,
 .icon-wrapper {

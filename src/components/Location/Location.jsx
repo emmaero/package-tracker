@@ -13,11 +13,6 @@ export default function Location({ item }) {
   };
   return (
     <section className="location">
-      <ul>
-        <li>
-          <p>Andersbergsringen 41</p>
-        </li>
-      </ul>
       <Map coordinates={coordinates} location={location_name} />
     </section>
   );

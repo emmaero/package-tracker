@@ -11,7 +11,25 @@
   min-height: 600px;
   border-radius: 10px;
 }
+.detail-content {
+  display: flex;
+  flex-direction: column;
+}
+.order-detail h3 {
+  color: var(--color-tertiary);
+}
+.location {
+  width: 100%;
+}
 .map {
   height: 400px;
   width: 100%;
+}
+@media (min-width: 920px) {
+  .detail-content {
+    flex-direction: row;
+  }
+  .detail-content >* {
+    width: 50%;
+  }
 }

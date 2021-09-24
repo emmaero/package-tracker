@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function MapMarker({ text }) {
+export default function Marker({ text }) {
    const style = {
      display: "flex",
      flexDirection: "column",

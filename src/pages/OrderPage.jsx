@@ -1,22 +1,11 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment} from "react";
 import OrderItem from "../components/OrderItem";
 import truck from "../assets/image/cherry-truck.png";
-import savedData from "../data/sampleData.json";
+import { useOrder } from "../state/OrderProvider";
 
 export default function OrderScreen() {
-  const [orders, setOrders] = useState([]);
-  const URL = "https://my.api.mockaroo.com/insta-orders.json?key=e49e6840";
-  useEffect(() => {
-    fetch(URL)
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          return savedData;
-        }
-      })
-      .then((list) => setOrders(list));
-  }, []);
+   const { orders } = useOrder();
+
   const orderList = orders.map((item) => (
     <OrderItem key={item.id} item={item} />
   ));
@@ -29,6 +18,7 @@ export default function OrderScreen() {
         <div className="header-container">
           <div className="titles">
             <h1>Deliveries for </h1>
+            <h2>{ orders[0].user_name}</h2>
           </div>
           <img src={truck} alt="package truck" />
         </div>
