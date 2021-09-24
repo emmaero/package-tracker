@@ -1,0 +1,42 @@
+import { useState, useEffect } from "react";
+import { useOrder } from "../state/OrderProvider";
+import savedData from "../data/sampleData.json";
+import WelcomeInfo from "../components/WelcomeInfo";
+
+export default function HomePage() {
+  const [loadingStatus, setLoadingStatus] = useState(true);
+  const { orders, dispatch } = useOrder();
+  const URL = "https://my.api.mockaroo.com/insta-orders.json?key=e49e6840";
+  function saveOrders(orderList) {
+    dispatch({ type: "setOrder", orderList });
+  }
+  useEffect(() => {
+    fetch(URL)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          return savedData;
+        }
+      })
+      .then((json) => {
+        saveOrders(json);
+        setLoadingStatus(false);
+      })
+      .catch((error) => {
+        console.log("error data:", error);
+      });
+  }, [orders]);
+  const name = orders[0].user_name;
+  return (
+    <div className="home-page">
+      <nav>
+        <span className="logo">InstaPaket</span>
+      </nav>
+
+      <div className="home-page-body">
+        {loadingStatus ? <p>Loading</p> : <WelcomeInfo name={name} />}
+      </div>
+    </div>
+  );
+}

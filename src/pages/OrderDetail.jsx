@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import { useHistory } from "react-router-dom";
 import { useOrder } from "../state/OrderProvider";
 import Location from "../components/Location/Location";
@@ -6,19 +6,19 @@ import Location from "../components/Location/Location";
 export default function OrderDetail({ match }) {
   const { parcel_id } = match.params;
   const { orders } = useOrder();
-  const parcel = orders.find((item) => item.parcel_id === parcel_id);
-  //states
-  const [order, setOrder] = useState(parcel);
+  const order = orders.find((item) => item.parcel_id === parcel_id);
+
   const history = useHistory();
   function goToPreviousPath() {
     history.goBack();
   }
   return (
-    <Fragment>
+    <div className="page">
       <header>
         <nav>
           <span className="logo">InstaPaket</span>
         </nav>
+        <h2 className="margin-left">Order Detail</h2>
       </header>
       <div className="container order-page-content">
         <button className="button-main" onClick={goToPreviousPath}>
@@ -39,6 +39,6 @@ export default function OrderDetail({ match }) {
           <Location item={order} />
         </div>
       </div>
-    </Fragment>
+    </div>
   );
 }

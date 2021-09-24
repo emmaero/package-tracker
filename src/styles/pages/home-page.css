@@ -1,0 +1,26 @@
+.home-page {
+  background-color: var(--color-secondary);
+  width: 100%;
+  height: 100vh;
+}
+.home-page-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 60%;
+  margin: auto;
+}
+.home-page-body > * {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home-page-body h2 {
+  padding-bottom: 16px;
+}
+.reciever_name {
+  color: var(--color-tertiary);
+}

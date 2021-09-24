@@ -7,15 +7,11 @@ export default function Map({ coordinates, location }) {
   return (
     <div className="map">
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyDRH7rjn8Chud0hgDk5JJ3IRAOfD3qsIl8" }}
+        bootstrapURLKeys={{ key: process.env.REACT_APP_MAP_API_KEY }}
         defaultCenter={coordinates}
         defaultZoom={15}
       >
-        <Marker
-          lat={coordinates.lat}
-          lng={coordinates.lng}
-          text={location}
-        />
+        <Marker lat={coordinates.lat} lng={coordinates.lng} text={location} />
       </GoogleMapReact>
     </div>
   );

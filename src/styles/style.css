@@ -10,6 +10,7 @@
 /* pages */
 @import url("./pages/order-page.css");
 @import url("./pages/order-detail.css");
+@import url("./pages/home-page.css");
 
 /* particles */
 @import url("./particles/header.css");
