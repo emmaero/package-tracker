@@ -1,30 +1,17 @@
 // NPM files
 import React, { useEffect } from "react";
 import OrderReducer from "./OrderReducer";
-import { useContext, useReducer} from "react";
-import savedData from "../data/sampleData.json"
+import { useContext, useReducer } from "react";
 
 //script
 import STORAGE_KEY from "../scripts/storageKey";
-
+// const STORAGE_KEY = process.env.REACT_APP_ORDER_API;
 const OrderContext = React.createContext(null);
 export function OrderProvider(props) {
-
   // Global state
   const [orders, dispatch] = useReducer(OrderReducer, loadOrder(STORAGE_KEY));
-   const URL = "https://my.api.mockaroo.com/insta-orders.json?key=e49e6840";
-  // useEffect(() => saveOrder(STORAGE_KEY, order), [order]);
-    useEffect(() => {
-      fetch(URL)
-        .then((response) => {
-          if (response.ok) {
-            return response.json();
-          } else {
-            return savedData;
-          }
-        })
-        .then((list) => saveOrder(STORAGE_KEY, list));
-    }, [orders]);
+  useEffect(() => saveOrder(STORAGE_KEY, orders), [orders]);
+
   return (
     <OrderContext.Provider value={{ orders, dispatch }}>
       {props.children}

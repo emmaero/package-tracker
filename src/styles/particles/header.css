@@ -16,6 +16,9 @@ header img {
   width: 60%;
   max-width: 344px;
 }
+header nav{
+  padding: 8px 0;
+}
 .header-container {
   padding: var(--space-medium);
   display: flex;

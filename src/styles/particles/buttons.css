@@ -5,6 +5,18 @@
   font-weight: bold;
   color: var(--color-primary);
   cursor: pointer;
+  text-decoration: underline;
+}
+.button-home {
+  border: none;
+  background-color: transparent;
+  font-size: var(--font-button-mobile);
+  font-weight: bold;
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+  padding: var(--space-medium);
+  border-radius: 10px;
+  cursor: pointer;
 }
 @media (min-width: 920px) {
   .button-main {

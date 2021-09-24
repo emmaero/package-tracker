@@ -9,4 +9,8 @@
   .order-list {
     grid-template-columns: auto auto;
   }
+  .page {
+   position: relative;
+  top: 70px;
+}
 }

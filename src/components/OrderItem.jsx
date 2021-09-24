@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useOrder } from "../state/OrderProvider";
+//Project files
 import { iconChooser, statusStringConverter } from "../scripts/statusConverter";
 
 export default function OrderItem({ item }) {
@@ -9,7 +9,7 @@ export default function OrderItem({ item }) {
   const { parcel_id, status, sender } = item;
 
   const iconType = iconChooser(status);
-  const statusText = statusStringConverter(status)
+  const statusText = statusStringConverter(status);
 
   return (
     <div className="order-item">
