@@ -26,8 +26,7 @@ export default function HomePage() {
       .catch((error) => {
         console.log("error data:", error);
       });
-  }, [orders]);
-  const name = orders[0].user_name;
+  }, []);
   return (
     <div className="home-page">
       <nav>
@@ -35,7 +34,7 @@ export default function HomePage() {
       </nav>
 
       <div className="home-page-body">
-        {loadingStatus ? <p>Loading</p> : <WelcomeInfo name={name} />}
+        {loadingStatus ? <p>Loading</p> : <WelcomeInfo name={orders[0].user_name} />}
       </div>
     </div>
   );
