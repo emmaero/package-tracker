@@ -34,7 +34,7 @@ export default function HomePage() {
       </nav>
 
       <div className="home-page-body">
-        {loadingStatus ? <p>Loading</p> : <WelcomeInfo name={orders[0].user_name} />}
+        {loadingStatus ? <p>Loading...</p> : <WelcomeInfo name={orders[0].user_name} />}
       </div>
     </div>
   );
