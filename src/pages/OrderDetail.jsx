@@ -27,8 +27,10 @@ export default function OrderDetail({ match }) {
         <div className="detail-content">
           <div className="order-detail">
             <h3>Delivery from</h3>
+            {/* sender is not a title */}
             <h2>{sender}</h2>
             <h3>Location</h3>
+            {/* location_name is not a title */}
             <h2>{location_name}</h2>
             <h3>Arriving</h3>
             <h2>{convertToDateText(eta)}</h2>
@@ -36,6 +38,7 @@ export default function OrderDetail({ match }) {
             <h2>{convertToDateText(last_updated)}</h2>
             <p>{notes}</p>
           </div>
+          {/* Readability variable name, this can be called Map -1 */}
           <Location item={order} />
         </div>
       </div>

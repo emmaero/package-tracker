@@ -1,6 +1,7 @@
 import React from "react";
 import Map from "./Map";
 
+// This component can be fused with Map.jsx -1
 export default function Location({ item }) {
   const {
     location_coordinate_latitude,

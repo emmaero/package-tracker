@@ -7,9 +7,11 @@ export default function HomePage() {
   const [loadingStatus, setLoadingStatus] = useState(true);
   const { orders, dispatch } = useOrder();
   const URL = "https://my.api.mockaroo.com/insta-orders.json?key=e49e6840";
+
   function saveOrders(orderList) {
     dispatch({ type: "setOrder", orderList });
   }
+
   useEffect(() => {
     fetch(URL)
       .then((response) => {
@@ -27,14 +29,21 @@ export default function HomePage() {
         console.log("error data:", error);
       });
   }, []);
+
   return (
     <div className="home-page">
       <nav>
         <span className="logo">InstaPaket</span>
       </nav>
 
+      {/* Here you dont handle an error scenario -1 */}
+      {/* Example here the app just hangs up if the server is down or if i simulate that by disabling the wifi */}
       <div className="home-page-body">
-        {loadingStatus ? <p>Loading...</p> : <WelcomeInfo name={orders[0].user_name} />}
+        {loadingStatus ? (
+          <p>Loading...</p>
+        ) : (
+          <WelcomeInfo name={orders[0].user_name} />
+        )}
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ export default function OrderScreen() {
   const orderList = orders.map((item) => (
     <OrderItem key={item.id} item={item} />
   ));
+  
   return (
     <div className="page">
       <header>
